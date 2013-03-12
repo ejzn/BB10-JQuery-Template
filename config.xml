@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        version="1.0.0.0" id="com.app.your" xml:lang="en">
+
+  <author href="http://erikjohnson.ca" rim:copyright="Copyright Nobody">Erik Johnson</author>
+
+  <name>App title</name>
+
+  <description>
+     Something cool here :)
+  </description>
+
+  <icon src="icons/touch-icon.png"/>
+  <rim:splash src="startup.png" />
+
+<!-- Uncomment to disable orientation <feature id="blackberry.app.orientation">
+    <param name="mode" value="portrait" />
+  </feature>-->
+
+  <feature id="blackberry.app" required="true" version="1.0.0.0">
+    <param name="backgroundColor" value="0x000000" />
+  </feature>
+
+  <feature id="blackberry.invoke" required="true" version="1.0.0.0"/>
+  <feature id="blackberry.invoked" required="true" version="1.0.0.0"/>
+  <feature id="blackberry.identity" required="true" version="1.0.0.0"/>
+
+  <access uri="your.domain" subdomains="true">
+    <feature id="blackberry.app" required="true" version="1.0.0.0"/>
+    <feature id="blackberry.invoke" required="true" version="1.0.0.0"/>
+    <feature id="blackberry.invoked" required="true" version="1.0.0.0"/>
+    <feature id="blackberry.identity" required="true" version="1.0.0.0"/>
+  </access>
+
+  <content src="index.html" rim:allowInvokeParams="true" />
+
+  <rim:invoke-target id="com.app.your">
+    <type>APPLICATION</type>
+    <filter>
+      <action>bb.action.OPEN</action>
+      <mime-type>text/plain</mime-type>
+    </filter>
+  </rim:invoke-target>
+
+  <rim:permissions>
+    <rim:permit>access_shared</rim:permit>
+  </rim:permissions>
+</widget>
